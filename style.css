@@ -39,7 +39,7 @@ li {
 }
 
 button {
-    background-color: #2563eb;
+    background-color: #8113b8;
     color: white;
     border: none;
     padding: 14px 25px;
@@ -50,4 +50,23 @@ button {
 
 button:hover {
     background-color: #1d4ed8;
+}
+
+.correct {
+    background-color: #16a34a;
+}
+
+.wrong {
+    background-color: #dc2626;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.answer:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
 }
