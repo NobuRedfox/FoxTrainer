@@ -90,6 +90,13 @@ function zeigeFrage() {
                             </button>
                         </div>
                     `;
+
+                    const restartButton = document.getElementById("restartButton");
+                    restartButton.addEventListener("click", function () {
+                        score = 0;
+                        aktuelleFrage = 0;
+                        zeigeFrage();
+                    }
                 }
             }, 1000);
         });
