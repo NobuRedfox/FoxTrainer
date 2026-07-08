@@ -14,16 +14,16 @@
 
 * [x] Fragen als Daten speichern
 * [x] Antworten dynamisch erzeugen
-* [ ] Richtige/Falsche Antworten auswerten
-* [ ] Punktesystem
+* [x] Richtige/Falsche Antworten auswerten
+* [x] Punktesystem
 
 ---
 
 ## Version 0.3.0
 
 * [ ] 10-Fragen-Modus
-* [ ] Ergebnisbildschirm
-* [ ] Neustart des Trainings
+* [x] Ergebnisbildschirm
+* [x] Neustart des Trainings
 
 ---
 

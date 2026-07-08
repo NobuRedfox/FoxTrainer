@@ -1,5 +1,9 @@
+
+const MAX_FRAGEN = 10;
+
 let score = 0;
 let aktuelleFrage = 0;
+
 
 const fragen = [
 
@@ -43,7 +47,11 @@ function zeigeFrage() {
     }
 
     app.innerHTML = `
-        <h1>Frage ${aktuelleFrage + 1} von ${fragen.length}</h1>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+        
+        <h1>Frage ${aktuelleFrage + 1} von ${Math.min(MAX_FRAGEN, fragen.length)}</h1>
 
         <div class="card">
             <p>${fragen[aktuelleFrage].text}</p>
@@ -67,38 +75,55 @@ function zeigeFrage() {
                 answers[fragen[aktuelleFrage].richtig].style.backgroundColor = "green";
             }
 
-            // Alle Buttons deaktivieren
-            for (let j = 0; j < answers.length; j++) {
-                answers[j].disabled = true;
-                
-            }
+            deaktiviereButtons(answers);
 
             setTimeout(function () {
-                aktuelleFrage++;
-                if (aktuelleFrage < fragen.length) {
-                    zeigeFrage();
-                } else {
-                    app.innerHTML = `
-                        <h1>Training beendet!</h1>
-
-                        <div class="card">
-                            <h2>Dein Ergebnis</h2>
-                            <p>${score} von ${fragen.length} Punkten</p>
-                        
-                            <button id="restartButton">
-                                Nochmals spielen
-                            </button>
-                        </div>
-                    `;
-
-                    const restartButton = document.getElementById("restartButton");
-                    restartButton.addEventListener("click", function () {
-                        score = 0;
-                        aktuelleFrage = 0;
-                        zeigeFrage();
-                    }
-                }
+               gehezurNaechstenFrage();
             }, 1000);
         });
+    }
+}
+
+function zeigeErgebnis() {
+    app.innerHTML = `
+        <h1>Training beendet!</h1>
+
+        <div class="card">
+            <h2>Dein Ergebnis</h2>
+            <p>${score} von ${fragen.length} Punkten</p>
+        
+            <button id="restartButton">
+                Nochmals spielen
+            </button>
+        </div>
+    `;
+
+    const restartButton = document.getElementById("restartButton");
+    
+    restartButton.addEventListener("click", function () {
+        resetQuiz();
+    });
+}
+
+function deaktiviereButtons(answers) {
+    // Alle Buttons deaktivieren
+    for (let j = 0; j < answers.length; j++) {
+        answers[j].disabled = true;
+        
+    }
+}
+
+function resetQuiz() {
+    score = 0;
+    aktuelleFrage = 0;
+    zeigeFrage();
+}
+
+function gehezurNaechstenFrage() {
+    aktuelleFrage++;
+    if (aktuelleFrage < MAX_FRAGEN && aktuelleFrage < fragen.length) {
+        zeigeFrage();
+    } else {
+        zeigeErgebnis();
     }
 }
