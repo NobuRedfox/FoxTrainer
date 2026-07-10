@@ -21,7 +21,7 @@
 
 ## Version 0.3.0
 
-* [ ] 10-Fragen-Modus
+* [x] 10-Fragen-Modus
 * [x] Ergebnisbildschirm
 * [x] Neustart des Trainings
 
@@ -29,13 +29,17 @@
 
 ## Version 0.4.0
 
-* [ ] Code-Challenges
-* [ ] Java-Code-Auswertung
+* [x] Fragen mit eindeutiger ID
+* [x] Themen pro Frage
+* [x] Lernstand im localStorage speichern
+* [x] Richtige und falsche Antworten zählen
 
 ---
 
 ## Version 0.5.0
 
+* [ ] Code-Challenges
+* [ ] Java-Code-Auswertung
 * [ ] Benutzerprofil
 * [ ] Statistiken
 * [ ] Lernfortschritt speichern

@@ -2,6 +2,23 @@
 
 Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 
+# v0.4.0
+
+### Hinzugefügt
+
+
+* Fragen mit eindeutigen IDs ergänzt
+* Themenfeld für Fragen hinzugefügt
+* Fragen in eine eigene Datei ausgelagert
+* Lernstand in eine eigene Datei ausgelagert
+* Lernfortschritt mit `localStorage` gespeichert
+* Richtige und falsche Antworten pro Frage gezählt
+* Datum der letzten Antwort gespeichert
+* Fragen für einen Trainingsdurchlauf zufällig gemischt
+* Maximal 10 Fragen pro Training ausgewählt
+* Quizlogik in mehrere Dateien aufgeteilt
+
+---
 
 # v0.3.0
 
@@ -15,7 +32,7 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 * Quizlogik in mehrere Funktionen aufgeteilt
 * Funktion `zeigeErgebnis()` hinzugefügt
 * Funktion `resetQuiz()` hinzugefügt
-* Funktion `deaktiviereButtons()` hinzugefügt
+* Funktion `deaktiviereantwortKnopfe()` hinzugefügt
 * Funktion `geheZurNaechstenFrage()` hinzugefügt
 * `MAX_FRAGEN` vorbereitet
 
@@ -30,7 +47,7 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 * Richtige und falsche Antworten werden ausgewertet
 * Punktesystem implementiert
 * Mehrere Fragen unterstützt
-* Antwortbuttons werden nach Auswahl deaktiviert
+* AntwortantwortKnopfe werden nach Auswahl deaktiviert
 
 ---
 
@@ -47,6 +64,6 @@ Alle wichtigen Änderungen an diesem Projekt werden hier dokumentiert.
 * Projektstruktur erstellt
 * Fragen als JavaScript-Objekt gespeichert
 * Antworten dynamisch aus dem Fragenobjekt erzeugt
-* Antwortbuttons mit einer Schleife generiert
-* Antwortbuttons über CSS-Klassen angesprochen
-* Click-Events für alle Antwortbuttons implementiert
+* AntwortantwortKnopfe mit einer Schleife generiert
+* AntwortantwortKnopfe über CSS-Klassen angesprochen
+* Click-Events für alle AntwortantwortKnopfe implementiert
