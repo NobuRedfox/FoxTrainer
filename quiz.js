@@ -1,3 +1,5 @@
+let aktuellerTipp = 0;
+
 function zeigeFrage() {
     let antwortKnopfe = "";
 
@@ -54,7 +56,7 @@ function gehezurNaechstenFrage() {
     if (aktuelleFrage < trainingsFragen.length) {
         zeigeFrage();
     } else {
-        zeigeErgebnis();
+        zeigeCodeChallenge();
     }
 }
 
@@ -102,6 +104,77 @@ function mischeFragen(fragenArray) {
     return gemischt;
 }
 
-function zeigeCodeChallange() {
-    
+function zeigeCodeChallenge() {
+    aktuellerTipp = 0;
+
+    const challenge = codeChallenges[0];
+
+    app.innerHTML = `
+        <h1>Code-Challenge</h1>
+
+        <div class="card code-challenge-card">
+            <h2>${challenge.titel}</h2>
+
+            <p>${challenge.aufgabe}</p>
+
+            <textarea
+                id="codeEingabe"
+                rows="12"
+                placeholder="Schreibe hier deinen Code..."
+            ></textarea>
+
+            <p id="codeFeedback"></p>
+
+            <p id="tippText"></p>
+
+            <button id="tippKnopf">
+                Tipp
+            </button>
+
+            <button id="codePruefenKnopf">
+                Code prüfen
+            </button>
+        </div>
+    `;
+
+    const codePruefenKnopf = document.getElementById("codePruefenKnopf");
+
+    const tippKnopf = document.getElementById("tippKnopf");
+    const tippText = document.getElementById("tippText");
+
+    tippKnopf.addEventListener("click", function() {
+        if (aktuellerTipp < challenge.tipps.length) {
+            tippText.textContent = challenge.tipps[aktuellerTipp];
+            tippText.className = "hint";
+
+            aktuellerTipp++;
+
+            if (aktuellerTipp === challenge.tipps.length) {
+                tippKnopf.disabled = true;
+                tippKnopf.textContent = "Keine weiteren Tipps";
+            }
+        }
+    });
+
+    codePruefenKnopf.addEventListener("click", function () {
+        const codeEingabe = document.getElementById("codeEingabe");
+
+        const code = codeEingabe.value;
+
+        pruefeCode(code);
+    });
+}
+
+function pruefeCode(code) {
+    const codeFeedback = document.getElementById("codeFeedback");
+
+    if (code.trim() === "") {
+        codeFeedback.textContent = "Bitte gib zuerst eine Lösung ein.";
+        codeFeedback.className = "wrong";
+        return;
+    }
+
+    console.log("Code zur Prüfung:", code);
+
+    zeigeErgebnis();
 }

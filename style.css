@@ -96,5 +96,54 @@ button:hover {
     background-color: var(--accent);
     border-radius: 10px;
 
-    transition: width 0,4s ease;
+    transition: width 0.4s ease;
+}
+
+#codeEingabe {
+    width:100%;
+    min-height: 260px;
+
+    padding: 20px;
+
+    background-color: var(--background);
+    color: var(--text);
+
+    border: 1px solid var(--primary);
+    border-radius: 12px;
+
+    font-family: monospace;
+    font-size: 16px;
+
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#codeEingabe:focus {
+        outline: 2px solid var(--primary);
+}
+
+#codePruefenKnopf {
+    display: block;
+    width: 220px;
+    margin: 25px auto 0;
+}
+
+.code-challenge-card {
+    text-align: left;
+}
+
+.code-challenge-card h2 {
+    margin-bottom: 10px;
+}
+
+.code-challenge-card p {
+    margin-bottom: 25px;
+}
+
+.hint {
+    background-color: var(--background);
+    padding: 15px;
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    margin: 20px 0;
 }
